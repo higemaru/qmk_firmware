@@ -23,7 +23,7 @@
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x0003",
-        "vid": "0x6b65"
+        "vid": "0x6B65"
     },
     "layouts": {
         "LAYOUT_46": {

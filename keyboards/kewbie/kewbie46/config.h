@@ -19,4 +19,4 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-#define PRODUCT Kewbie46
+//#define PRODUCT Kewbie46
