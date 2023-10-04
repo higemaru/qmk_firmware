@@ -1,27 +1,23 @@
 # Kewbie46
 
-![kewbie46](imgur.com image replace me!)
+![kewbie46](https://i.imgur.com/eWcHN0J.png)
 
-*A short description of the keyboard/project*
+This is a 40% keyboard designed for the SONSHI style (placed on top of a MacBook).
 
 * Keyboard Maintainer: [higemaru](https://github.com/higemaru)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+* Hardware Supported: Kewbie46 PCB, RP2040-Zero
+* Hardware Availability: Not Available
 
 Make example for this keyboard (after setting up your build environment):
 
-    make kewbie46:default
+    qmk compile -kb kewbie/kewbie46 -km default
 
 Flashing example for this keyboard:
 
-    make kewbie46:default:flash
+    qmk flash -kb kewbie/kewbie46 -km default
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
 ## Bootloader
 
-Enter the bootloader in 3 ways:
-
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
 * **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
-* **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
