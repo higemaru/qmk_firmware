@@ -7,6 +7,11 @@ env:
   KEYBOARD: 'kewbie/kewbie46_lili'
   KEYMAP: 'via'
 
+runs:
+  using: 'node16'
+
+
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -19,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: ./util/qmk_install.sh
     - name: build
-      run: ./bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
+      run: qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
     - uses: actions/upload-artifact@v2
       with:
         name: firmware
