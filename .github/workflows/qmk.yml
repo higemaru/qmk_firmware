@@ -20,13 +20,11 @@ jobs:
       run: ./util/qmk_install.sh
     - name: Install qmk cli
       run: python3 -m pip install --user qmk
-#    - name: set path
-#      run: echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
-    - name: search qmk
-      run: find ~/ -name qmk
-#    - name: build
-#      run: ./bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
-#    - uses: actions/upload-artifact@v3
-#      with:
-#        name: firmware
-#        path: ./.build/*.uf2
+    - name: set path
+      run: echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
+    - name: build
+      run: qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: firmware
+        path: ./.build/*.uf2
