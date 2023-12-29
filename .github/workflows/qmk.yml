@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: ./util/qmk_install.sh
     - name: build
-      run: bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
+      run: ~/.local/bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
     - uses: actions/upload-artifact@v3
       with:
         name: firmware
