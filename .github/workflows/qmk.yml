@@ -21,7 +21,7 @@ jobs:
     - name: set path
       run: echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
     - name: echo path
-      run: echo $PATH && ls -al ~
+      run: which qmk && find $HOME -name qmk
 #    - name: build
 #      run: ./bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
 #    - uses: actions/upload-artifact@v3
