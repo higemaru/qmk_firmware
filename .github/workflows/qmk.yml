@@ -1,0 +1,28 @@
+name: Build qmk on GitHub Actions
+
+on:
+  - push
+
+defaults:
+  run:
+    environment:
+      KEYBOARD: 'kewbie/kewbie46_lili'
+      KEYMAP: 'via'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Clone qmk/qmk_firmware
+      uses: actions/checkout@v2
+      with:
+        repository: 'qmk/qmk_firmware'
+        submodules: true
+    - name: Install dependencies
+      run: ./util/qmk_install.sh
+    - name: build
+      run: ./bin/qmk compile -kb $KEYBOARD -km $KEYMAP
+    - uses: actions/upload-artifact@v2
+      with:
+        name: firmware
+        path: ./.build/*.uf2
