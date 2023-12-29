@@ -18,6 +18,8 @@ jobs:
         submodules: true
     - name: Install dependencies
       run: ./util/qmk_install.sh
+    - name: set path
+      run: echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
     - name: build
       run: ./bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
     - uses: actions/upload-artifact@v3
