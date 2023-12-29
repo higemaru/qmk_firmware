@@ -11,10 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Clone qmk/qmk_firmware
+#    - name: Clone qmk/qmk_firmware
+    - name: Clone higemaru/qmk_firmware
       uses: actions/checkout@v3
       with:
-        repository: 'qmk/qmk_firmware'
+#        repository: 'qmk/qmk_firmware'
+        repository: 'higemaru/qmk_firmware'
         submodules: true
     - name: Install dependencies
       run: ./util/qmk_install.sh
