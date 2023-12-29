@@ -3,11 +3,9 @@ name: Build qmk on GitHub Actions
 on:
   - push
 
-defaults:
-  run:
-    environment:
-      KEYBOARD: 'kewbie/kewbie46_lili'
-      KEYMAP: 'via'
+env:
+  KEYBOARD: 'kewbie/kewbie46_lili'
+  KEYMAP: 'via'
 
 jobs:
   build:
@@ -21,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: ./util/qmk_install.sh
     - name: build
-      run: ./bin/qmk compile -kb $KEYBOARD -km $KEYMAP
+      run: ./bin/qmk compile -kb ${{ env.KEYBOARD }} -km ${{ env.KEYMAP }}
     - uses: actions/upload-artifact@v2
       with:
         name: firmware
