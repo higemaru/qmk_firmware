@@ -4,7 +4,7 @@ on:
   - push
 
 env:
-  KEYBOARD: 'kewbie/kewbie46_lili'
+  KEYBOARD: 'kewbie/kewbie46'
   KEYMAP: 'via'
 
 jobs:
